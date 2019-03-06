@@ -1,5 +1,6 @@
 // Test away
 import React from 'react';
+import renderer from 'react-test-renderer';
 import Dashboard from './Dashboard';
 import { cleanup, fireEvent, render } from 'react-testing-library';
 import 'react-testing-library/cleanup-after-each';
@@ -8,7 +9,11 @@ import 'jest-dom/extend-expect';
 afterEach(cleanup);
 
 describe('Dashboard component', () => {
-    
+
+    it('Snapshot test', () => {
+        const snap = renderer.create(<App />).toJSON();
+        expect(snap).toMatchSnapshot();
+      });
     it("Contains necesscary components", () => {
         const component = render(<Dashboard />);
         component.getByText(/open/i);
