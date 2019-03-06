@@ -8,6 +8,12 @@ import 'jest-dom/extend-expect';
 afterEach(cleanup);
 
 describe('Dashboard component', () => {
+    
+    it("Contains necesscary components", () => {
+        const component = render(<Dashboard />);
+        component.getByText(/open/i);
+        component.getByText(/unlocked/i);
+      });
     test('Closing Works', () => {
         const button1 = render(<Dashboard />).getByTestId("clopenbtn");
         const dashboard = render(<Dashboard />);

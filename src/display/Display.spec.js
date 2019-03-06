@@ -12,6 +12,7 @@ describe('Display', () => {
         const controls = render(<Display locked={true} closed={true} />);
         const lockhold = controls.getByTestId("lockbox");
         expect(lockhold).toHaveTextContent('Locked');
+        expect(lockhold).toHaveClass('red-led');
     })
 }
 )
