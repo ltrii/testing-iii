@@ -11,7 +11,7 @@ afterEach(cleanup);
 describe('Dashboard component', () => {
 
     it('Snapshot test', () => {
-        const snap = renderer.create(<App />).toJSON();
+        const snap = renderer.create(<Dashboard />).toJSON();
         expect(snap).toMatchSnapshot();
       });
     it("Contains necesscary components", () => {
